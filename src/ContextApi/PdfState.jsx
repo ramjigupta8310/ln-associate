@@ -47,7 +47,7 @@ const PdfState = ({ children }) => {
     const options = {
       filename: "Lnassociate.pdf",
       image: { type: "jpeg", quality: 1 },
-      html2canvas: { scale: 4, useCORS: true },
+      html2canvas: { scale: 3, useCORS: true },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
 
