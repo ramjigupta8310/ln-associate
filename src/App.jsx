@@ -15,6 +15,8 @@ import IncomeTaxDetail from './pages/income-tax/incomeTaxById';
 import Finance from './pages/finance/Finance';
 import Audit from './pages/audit/Audit';
 import ContactUs from './pages/contactus/Contactus'
+import ScrollToTop from './Components/ScrollToTop';
+
 
 // Import Bootstrap Js
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -33,6 +35,9 @@ const App = () => {
       <BrowserRouter>
         {/* Common Header */}
         <Header />
+
+        {/* Scroll To Top Functionality */}
+        <ScrollToTop />
 
         {/* Route Definitions */}
         <div style={{ marginTop: "4rem", width: "98.8vw" }}>

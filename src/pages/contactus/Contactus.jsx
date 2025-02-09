@@ -163,6 +163,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-12">
                     <textarea
+                      rows={8}
                       name="message"
                       className="form-control"
                       placeholder="Message"
