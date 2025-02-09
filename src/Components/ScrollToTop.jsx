@@ -2,11 +2,19 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0); // Scroll to top on route change
-    }, [location]);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "instant" }); // Instant reset first
+        //   setTimeout(() => {
+        //     window.scrollTo({ top: 0, behavior: "smooth" }); // Then smooth scroll
+        //   }, 50); // Small delay for smooth effect
+        },  50); // Delay ensures DOM is loaded before scroll reset
+      }, [pathname]);
+
+  
+
     return null;
 }
 
