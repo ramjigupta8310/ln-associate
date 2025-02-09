@@ -5,7 +5,7 @@ import styles from "./Header.module.css"
 
 const Header = () => {
   return (
-    <div className="position-fixed top-0" style={{zIndex:999}}>
+    <div className="position-fixed top-0" style={{zIndex:999,width:"100vw"}}>
       {/* Top Header */}
       <div className="container-fluid bg-dark px-5 d-none d-lg-block">
         <div className="row gx-0">
