@@ -1,0 +1,66 @@
+/* General container for the business detail */
+.container {
+    font-family: Arial, sans-serif;
+}
+
+/* Plan selector styles */
+.plan-selector {
+    margin-bottom: 30px;
+}
+
+.plan-btn {
+    padding: 12px 24px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin: 5px 10px;
+}
+
+.plan-btn.active {
+    background-color: #d90b14;
+    color: white;
+}
+
+.plan-btn:hover {
+    background-color: #d90b14;
+    color: white;
+}
+
+/* Documents list and price section */
+.documents-list,
+.price-section {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.price-section .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d90b14;
+}
+
+/* Plan details section */
+.plan-details {
+    margin-top: 20px;
+}
+
+.plan-description {
+    font-size: 16px;
+    color: #333;
+}
+
+.download-btn {
+    padding: 12px 24px;
+    background-color: #d90b14;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin: 0 10px;
+}
