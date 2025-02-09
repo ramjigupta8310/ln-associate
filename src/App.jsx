@@ -33,11 +33,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        {/* Common Header */}
-        <Header />
 
         {/* Scroll To Top Functionality */}
         <ScrollToTop />
+
+        {/* Common Header */}
+        <Header />
 
         {/* Route Definitions */}
         <div style={{ marginTop: "4rem", width: "98.8vw" }}>
