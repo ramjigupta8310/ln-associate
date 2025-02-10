@@ -5,16 +5,8 @@ const ScrollToTop = () => {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        setTimeout(() => {
-            window.history.scrollRestoration = "manual"; // Force disable browser scroll restore
-            window.scrollTo({ top: 0, behavior: "instant" }); // Instant reset first
-            //   setTimeout(() => {
-            //     window.scrollTo({ top: 0, behavior: "smooth" }); // Then smooth scroll
-            //   }, 50); // Small delay for smooth effect
-        }, 50); // Delay ensures DOM is loaded before scroll reset
+        window.scrollTo({ top: 0, behavior: "instant" }); // Instant reset first
     }, [pathname]);
-
-
 
     return null;
 }
