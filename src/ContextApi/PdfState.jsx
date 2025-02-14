@@ -58,13 +58,8 @@ const PdfState = ({ children }) => {
   return (
     <PdfContext.Provider
       value={{
-        title,
-        selectedPlan,
-        selectedDocuments,
         setSelectedDocuments,
-        triggerDownload,
         setTriggerDownload,
-        generatePdf
       }}
     >
       {children}
