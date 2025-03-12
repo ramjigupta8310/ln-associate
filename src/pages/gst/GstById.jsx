@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../business/BusinessDetail.css"; // Assuming you have a CSS file for styling
 import PdfContext from "../../ContextApi/PdfContext";
 
@@ -8,7 +8,6 @@ const GstDetail = () => {
     document.title = "GST - Lnassociate"; // Dynamic Title
   }, []);
   const { id } = useParams(); // Get the `id` from the URL
-  
   const { setTriggerDownload, setSelectedDocuments } =
     useContext(PdfContext);
 
@@ -28,6 +27,7 @@ const GstDetail = () => {
     4: "GST Annual Return Filing",
     5: "GST LUT Filing",
     6: "GST Notices",
+    7: "GST Appeal",
   };
   const [selectedPlan, setSelectedPlan] = useState(defaultPlan[id]); // State to manage the selected plan
 
@@ -57,115 +57,175 @@ const GstDetail = () => {
   const planDocuments = {
     Proprietorship: (
       <ul>
-        <li>✔ ID PROOF: 1. Passport Size Photo, 2. Aadhar Card, 3. Pan Card</li>
         <li>
-          ✔ PROOF OF BUSINESS PLACE (ANY ONE): 1. Electricity Bill, 2. Legal
-          Ownership Document, 3. Property Tax Receipt, 4. Municipal Khata Copy,
-          5. Rent/Lease Agreement
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+          </ul>
+        </li>
+        <li>
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     Partnership: (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Promoter/ Partner, 2. Aadhar Card
-          Promoter/ Partner, 3. Pan Card Promoter/ Partner, 4. Partnership Firm
-          Pan Card.
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo (Promoter/Partner)</li>
+            <li>2. Aadhar Card (Promoter/Partner)</li>
+            <li>3. PAN Card (Promoter/Partner)</li>
+            <li>4. Partnership Firm PAN Card</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Partnership Deed, 2. Letter
-          Of Authorisation.
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Partnership Deed</li>
+            <li>2. Letter of Authorisation</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill, 2. Legal
-          Ownership Document, 3. Property Tax Receipt , 4. Municipal Khata Copy
-          , 5. Rent/lease Agreement.
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Private Limited Company": (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Of Directors, 2. Aadhar Card Of
-          Directors, 3. Pan Card Of Directors, 4. Pan Card Of Company.
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo of Directors</li>
+            <li>2. Aadhar Card of Directors</li>
+            <li>3. PAN Card of Directors</li>
+            <li>4. PAN Card of Company</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Certificate Of Incorporation
-          2. Letter Of Authorisation.
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Certificate of Incorporation</li>
+            <li>2. Letter of Authorisation</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill 2. Legal
-          Ownership Document 3. Property Tax Receipt 4. Municipal Khata Copy 5 .
-          Rent/lease Agreement/ Noc.
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement/NOC</li>
+          </ul>
         </li>
       </ul>
     ),
+
     LLP: (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Promoter/ Partner 2. Aadhar Card
-          Promoter/ Partner 3. Pan Card Promoter/ Partner 4. Pan Card Of Firm.
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo (Promoter/Partner)</li>
+            <li>2. Aadhar Card (Promoter/Partner)</li>
+            <li>3. PAN Card (Promoter/Partner)</li>
+            <li>4. PAN Card of Firm</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Certificate Of Incorporation
-          2. Letter Of Authorisation
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Certificate of Incorporation</li>
+            <li>2. Letter of Authorisation</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill 2. Legal
-          Ownership Document 3. Property Tax Receipt 4. Municipal Khata Copy 5 .
-          Rent/lease Agreement/ Noc.
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement/NOC</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "GST Return Filing": (
       <ul>
-        <li>Sales Invoice</li>
-        <li>Purchases Invoice</li>
-        <li>Gst Login ID & Password</li>
+        <li>✔ Sales Invoice</li>
+        <li>✔ Purchases Invoice</li>
+        <li>✔ GST Login ID & Password</li>
       </ul>
     ),
+
     "GST Refund": (
       <ul>
-        <li>Declaration of GST RFD-01 – (Claimed out not exceed ITC)</li>
-        <li>Undertaking as per notification No</li>
-        <li>Statement -5B Rule 89(2) (g)</li>
-        <li>Printout of GSTR- 3B/GSTR-3.</li>
-        <li>Print out of GSTR RFD-01 & /ARN</li>
-        <li>Undertaking of no prosecution Rule 91(i)</li>
-        <li>Undertaking by claimant as per Para 2.0 of circular 24/2017</li>
+        <li>✔ Declaration of GST RFD-01 (Claimed amount should not exceed ITC)</li>
+        <li>✔ Undertaking as per notification No</li>
+        <li>✔ Statement -5B Rule 89(2) (g)</li>
+        <li>✔ Printout of GSTR-3B / GSTR-3</li>
+        <li>✔ Printout of GSTR RFD-01 & /ARN</li>
+        <li>✔ Undertaking of no prosecution Rule 91(i)</li>
+        <li>✔ Undertaking by claimant as per Para 2.0 of circular 24/2017</li>
       </ul>
     ),
+
     "GST Annual Return Filing": (
       <ul>
-        <li>
-          Details of total Inward and Outward Supplies in the scheduled
-          Financial Year.
-        </li>
-        <li>Income Tax Credit Ledger for the scheduled Financial Year.</li>
-        <li>GSTIN of Business Entity/Seller.</li>
-        <li>GST Reconciliation Statement</li>
-        <li>
-          Details of the Block Credit, Capital Goods, and related documents.
-        </li>
+        <li>✔ Details of total Inward and Outward Supplies in the scheduled Financial Year</li>
+        <li>✔ Income Tax Credit Ledger for the scheduled Financial Year</li>
+        <li>✔ GSTIN of Business Entity/Seller</li>
+        <li>✔ GST Reconciliation Statement</li>
+        <li>✔ Details of Block Credit, Capital Goods, and related documents</li>
       </ul>
     ),
+
     "GST LUT Filing": (
       <ul>
-        <li>Copy of GST Certificate</li>
-        <li>PAN card of the entity</li>
-        <li>KYC of the authorized person/signatory.</li>
-        <li>Copy of the IEC code</li>
-        <li>Canceled Cheque.</li>
-        <li>Authorized letter</li>
-        <li>GST RFD11 form</li>
+        <li>✔ Copy of GST Certificate</li>
+        <li>✔ PAN card of the entity</li>
+        <li>✔ KYC of the authorized person/signatory</li>
+        <li>✔ Copy of the IEC code</li>
+        <li>✔ Canceled Cheque</li>
+        <li>✔ Authorized letter</li>
+        <li>✔ GST RFD-11 form</li>
       </ul>
     ),
+
     "GST Notices": (
       <ul>
-        <li>Copy of GST Certificate</li>
-        <li>PAN card of the entity</li>
+        <li>✔ Copy of GST Certificate</li>
+        <li>✔ PAN card of the entity</li>
       </ul>
     ),
+
+    "GST Appeal": (
+      <ul>
+        <li>✔ Our team will respond to you for further details</li>
+      </ul>
+    )
+
   };
 
   const planPricing = {
@@ -187,7 +247,7 @@ const GstDetail = () => {
   };
 
   return (
-    <div className="container py-5" style={{marginTop:"7rem"}}>
+    <div className="container py-5" style={{ marginTop: "7rem" }}>
       <div
         className="section-title text-center position-relative pb-3 mb-5 mx-auto"
         style={{ maxWidth: 600 }}
@@ -286,6 +346,18 @@ const GstDetail = () => {
               </button>
             </>
           )}
+
+          {id === "7" && (
+            <>
+              <button
+                className={`plan-btn ${selectedPlan === "GST Appeal" ? "active" : ""
+                  }`}
+                onClick={() => handlePlanChange("GST Appeal")}
+              >
+                GST Appeal
+              </button>
+            </>
+          )}
         </div>
 
         {/* Render Documents List */}
@@ -294,10 +366,18 @@ const GstDetail = () => {
         {/* Render Price */}
         <div className="price-section">
           <p className="price">{planPricing[selectedPlan]}</p>
-          <p className="details-text">
-            Our team will respond to you for further details
-          </p>
-          <button className="download-btn" onClick={handleDownloadClick}>Download</button>
+          {id !== "7" && (
+            <p className="details-text">
+              Our team will respond to you for further details
+            </p>
+          )}
+
+          {
+            id === "7" ? (
+              <Link to="/contactUs"><button className="download-btn" >Contact US</button></Link>
+            ) :
+              (<button className="download-btn" onClick={handleDownloadClick}>Download</button>)
+          }
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ const BusinessDetail = () => {
     3: "MSME Proprietorship",
     4: "Iec Proprietorship",
     5: "Trademark",
-    6: "Gst Proprietorship",
+    // 6: "Gst Proprietorship",
   };
 
   const [selectedPlan, setSelectedPlan] = useState(defaultPlan[id]); // State to manage the selected plan
@@ -39,7 +39,7 @@ const BusinessDetail = () => {
     { id: 3, title: "MSME Udyam Registration" },
     { id: 4, title: "IEC Code" },
     { id: 5, title: "Trade Mark" },
-    { id: 6, title: "GST" },
+    // { id: 6, title: "GST" },
   ];
 
   // Find the service based on the `id`
@@ -56,153 +56,255 @@ const BusinessDetail = () => {
 
   // Conditional content based on plan selection
   const planDocuments = {
-    Proprietorship: (
+    "Proprietorship": (
       <ul>
-        <li>✔ ID PROOF: 1. Passport Size Photo, 2. Aadhar Card, 3. Pan Card</li>
         <li>
-          ✔ PROOF OF BUSINESS PLACE (ANY ONE): 1. Electricity Bill, 2. Legal
-          Ownership Document, 3. Property Tax Receipt, 4. Municipal Khata Copy,
-          5. Rent/Lease Agreement
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+          </ul>
+        </li>
+        <li>
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement</li>
+          </ul>
         </li>
         <li>✔ NOTE: DEPENDING ON REQUIREMENT OF CLIENT</li>
       </ul>
     ),
-    Partnership: (
+
+    "Partnership": (
       <ul>
         <li>
-          ✔ ID PROOF: 1. Passport Size Photo Promoter/ Partner, 2. Aadhar Card
-          Promoter/ Partner, 3. Pan Card Promoter/ Partner
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo (Promoter/Partner)</li>
+            <li>2. Aadhar Card (Promoter/Partner)</li>
+            <li>3. PAN Card (Promoter/Partner)</li>
+          </ul>
         </li>
         <li>✔ NOTE: OTHERS DEPENDING ON REQUIREMENT OF CLIENT</li>
       </ul>
     ),
+
     "Pvt Ltd Company": (
       <ul>
         <li>✔ PAN (SELF ATTACHED)</li>
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Pub Ltd Company": (
       <ul>
         <li>✔ PAN (SELF ATTACHED)</li>
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     OPC: (
       <ul>
         <li>✔ PAN (SELF ATTACHED)</li>
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Sec 8 Company Or Ngo Company": (
       <ul>
         <li>✔ PAN (SELF ATTACHED)</li>
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     LLP: (
       <ul>
         <li>✔ PAN (SELF ATTACHED)</li>
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
@@ -212,23 +314,39 @@ const BusinessDetail = () => {
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
         <li>✔ NOTE: OTHER DOCUMENTS REQUIRED DEPENDING ON REQUIREMENT</li>
       </ul>
@@ -239,25 +357,41 @@ const BusinessDetail = () => {
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
-        <li>✔ NOTE : OTHER DOCUMENTS REQUIRED DEPENDING ON REQUIREMENT</li>
+        <li>✔ NOTE: OTHER DOCUMENTS REQUIRED DEPENDING ON REQUIREMENT</li>
       </ul>
     ),
     NBFC: (
@@ -266,27 +400,44 @@ const BusinessDetail = () => {
         <li>✔ AADHAR CARD (SELF ATTACHED)</li>
         <li>✔ PASSPORT SIZE PHOTO</li>
         <li>
-          ✔ PROOF OF IDENTITY (ANY ONE): 1. Voters Identity Card, 2. Passport,
-          3. Driving License (SELF ATTACHED)
+          ✔ PROOF OF IDENTITY (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Voters Identity Card</li>
+            <li>2. Passport</li>
+            <li>3. Driving License (SELF ATTACHED)</li>
+          </ul>
         </li>
         <li>
-          ✔ RESIDENTIAL PROOF (ANY ONE): 1. Bank Statement, 2. Electricity Bill,
-          3. Telephone Bill, 4. Mobile Bill (NOT OLDER THAN TWO MONTHS, SELF
-          ATTACHED)
+          ✔ RESIDENTIAL PROOF (ANY ONE) (NOT OLDER THAN TWO MONTHS, SELF ATTACHED):
+          <ul className="list-unstyled">
+            <li>1. Bank Statement</li>
+            <li>2. Electricity Bill</li>
+            <li>3. Telephone Bill</li>
+            <li>4. Mobile Bill</li>
+          </ul>
         </li>
         <li>✔ NOTE: ALL THE DIRECTOR AND SUBSCRIBER</li>
         <li>
-          ✔ Ownership proof for Registered office: 1. Dastavej, 2. Municipal Tax
-          Bill, 3. Rent Agreement with Rent Receipt of last month
+          ✔ Ownership proof for Registered office:
+          <ul className="list-unstyled">
+            <li>1. Dastavej</li>
+            <li>2. Municipal Tax Bill</li>
+            <li>3. Rent Agreement with Rent Receipt of last month</li>
+          </ul>
         </li>
         <li>
-          ✔ Address Proof for Registered Office: 1. Electricity Bill, 2.
-          Telephone Bill, 3. Utility Bill, 4. Bank Statement (NOT OLDER THAN 2
-          MONTHS)
+          ✔ Address Proof for Registered Office (NOT OLDER THAN 2 MONTHS):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Telephone Bill</li>
+            <li>3. Utility Bill</li>
+            <li>4. Bank Statement</li>
+          </ul>
         </li>
       </ul>
     ),
-    "Conversion Of Company": (
+
+    "Conversion of Company": (
       <ul>
         <li>✔ DEPENDING ON REQUIREMENT OF CLIENT</li>
       </ul>
@@ -295,243 +446,445 @@ const BusinessDetail = () => {
     "BASIC REGISTRATION": (
       <ul>
         <li>
-          ✔ 1. Pan 2. Aadhar 3. Mobile no 4. Email 5. Name of firm 6. Address of
-          firm 7. Passport size Photo 8. Light Bill of Firm 9. Nature of work
+          ✔ Required Documents:
+          <ul className="list-unstyled">
+            <li>1. PAN</li>
+            <li>2. Aadhar</li>
+            <li>3. Mobile No</li>
+            <li>4. Email</li>
+            <li>5. Name of Firm</li>
+            <li>6. Address of Firm</li>
+            <li>7. Passport Size Photo</li>
+            <li>8. Light Bill of Firm</li>
+            <li>9. Nature of Work</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "STATE REGISTRATION": (
       <ul>
         <li>
-          ✔ 1. Plan of the processing unit showing the dimensions and
-          operation-wise area allocation 2. List of Directors/ Partners/
-          Proprietor with address, contact details, and photo ID (If Applicable)
-          3. Name and list of equipment and machinery used with the number and
-          installed capacity 4. List of food category to be manufactured 5.
-          Authority letter from manufacturer nominated a responsible person name
-          and address (If Applicable) 6. Analysis report of water to be used in
-          the process to confirm the portability 7. Proof of possession of
-          premises 8. Partnership deed/ affidavit of proprietorship 9. NOC and
-          copy of License from the manufacturer (If Applicable) 10. Copy of
-          certificate obtained under Coop Act 1861/Multi state Coop Act 2002 (If
-          Applicable) 11. Food safety management system plan or certificate
+          ✔ Required Documents:
+          <ul className="list-unstyled">
+            <li>1. Plan of the processing unit showing dimensions and area allocation</li>
+            <li>2. List of Directors/ Partners/ Proprietor with details (If Applicable)</li>
+            <li>3. Name and list of equipment and machinery with installed capacity</li>
+            <li>4. List of food categories to be manufactured</li>
+            <li>5. Authority letter for responsible person (If Applicable)</li>
+            <li>6. Analysis report of water used in the process</li>
+            <li>7. Proof of possession of premises</li>
+            <li>8. Partnership deed/ affidavit of proprietorship</li>
+            <li>9. NOC and copy of license from the manufacturer (If Applicable)</li>
+            <li>10. Certificate under Coop Act 1861/Multi-state Coop Act 2002 (If Applicable)</li>
+            <li>11. Food safety management system plan or certificate</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "CENTRAL REGISTRATION": (
       <ul>
         <li>
-          ✔ 1. Plan of the processing unit showing the dimensions and
-          operation-wise area allocation 2. List of Directors/ Partners/
-          Proprietor with address, contact details, and photo ID (If Applicable)
-          3. Name and list of equipment and machinery used with the number and
-          installed capacity 4. List of food category to be manufactured 5.
-          Authority letter from manufacturer nominated a responsible person name
-          and address (If Applicable) 6. Analysis report of water to be used in
-          the process to confirm the portability 7. Source of raw material for
-          milk, meat etc 8. Recall plan wherever applicable (If Applicable) 9.
-          Ministry of Commerce Certificate for 100% EOU (If Applicable) 10.
-          NOC/PA document issued by FSSAI (If Applicable) 11. IE code document
-          issued by DGFT (If Applicable) 12. Form IX 13. Certificate from
-          Ministry of Tourism (If Applicable) 14. Proof of possession of
-          premises (If Applicable)
+          ✔ Required Documents:
+          <ul className="list-unstyled">
+            <li>1. Plan of the processing unit showing dimensions and area allocation</li>
+            <li>2. List of Directors/ Partners/ Proprietor with details (If Applicable)</li>
+            <li>3. Name and list of equipment and machinery with installed capacity</li>
+            <li>4. List of food categories to be manufactured</li>
+            <li>5. Authority letter for responsible person (If Applicable)</li>
+            <li>6. Analysis report of water used in the process</li>
+            <li>7. Source of raw material for milk, meat, etc.</li>
+            <li>8. Recall plan (If Applicable)</li>
+            <li>9. Ministry of Commerce Certificate for 100% EOU (If Applicable)</li>
+            <li>10. NOC/PA document issued by FSSAI (If Applicable)</li>
+            <li>11. IE code document issued by DGFT (If Applicable)</li>
+            <li>12. Form IX</li>
+            <li>13. Certificate from Ministry of Tourism (If Applicable)</li>
+            <li>14. Proof of possession of premises (If Applicable)</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "MSME Proprietorship": (
       <ul>
         <li>
-          ✔ NEW MSME :- 1.Aadhar Card 2. Pan Card 3. Cancel Check 4. Business
-          Name 5. Elecricticty Bill (Business Place) 6. Business Activity
+          ✔ NEW MSME:
+          <ul className="list-unstyled">
+            <li>1. Aadhar Card</li>
+            <li>2. PAN Card</li>
+            <li>3. Cancelled Cheque</li>
+            <li>4. Business Name</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE MSME :- 1. Msme Regisration Number 2. Aadhar Card 3. Pan Card
-          4. Cancel Check 5. Business Name 6 . Elecricticty Bill (Business
-          Place) 7. Business Activity
+          ✔ UPDATE MSME:
+          <ul className="list-unstyled">
+            <li>1. MSME Registration Number</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+            <li>4. Cancelled Cheque</li>
+            <li>5. Business Name</li>
+            <li>6. Electricity Bill (Business Place)</li>
+            <li>7. Business Activity</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "MSME Partnership": (
       <ul>
         <li>
-          ✔ NEW MSME :- 1.Aadhar Card 2. Pan Card 3. Cancel Check 4. Business
-          Name 5. Elecricticty Bill (Business Place) 6. Business Activity 7. GST
-          Certificate (Optional)
+          ✔ NEW MSME:
+          <ul className="list-unstyled">
+            <li>1. Aadhar Card</li>
+            <li>2. PAN Card</li>
+            <li>3. Cancelled Cheque</li>
+            <li>4. Business Name</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. GST Certificate (Optional)</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE MSME :- 1. Msme Regisration Number 2. Aadhar Card 3. Pan Card
-          4. Cancel Check 5. Business Name 6 . Elecricticty Bill (Business
-          Place) 7. Business Activity 8. GST Certificate (Optional)
+          ✔ UPDATE MSME:
+          <ul className="list-unstyled">
+            <li>1. MSME Registration Number</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+            <li>4. Cancelled Cheque</li>
+            <li>5. Business Name</li>
+            <li>6. Electricity Bill (Business Place)</li>
+            <li>7. Business Activity</li>
+            <li>8. GST Certificate (Optional)</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "MSME Private Limited Company": (
       <ul>
         <li>
-          ✔ NEW MSME :- 1.Aadhar Card 2. Pan Card 3. Cancel Check 4. Business
-          Name 5. Elecricticty Bill (Business Place) 6. Business Activity 7. GST
-          Certificate (Optional)
+          ✔ NEW MSME:
+          <ul className="list-unstyled">
+            <li>1. Aadhar Card</li>
+            <li>2. PAN Card</li>
+            <li>3. Cancelled Cheque</li>
+            <li>4. Business Name</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. GST Certificate (Optional)</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE MSME :- 1. Msme Regisration Number 2. Aadhar Card 3. Pan Card
-          4. Cancel Check 5. Business Name 6 . Elecricticty Bill (Business
-          Place) 7. Business Activity 8. GST Certificate (Optional)
+          ✔ UPDATE MSME:
+          <ul className="list-unstyled">
+            <li>1. MSME Registration Number</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+            <li>4. Cancelled Cheque</li>
+            <li>5. Business Name</li>
+            <li>6. Electricity Bill (Business Place)</li>
+            <li>7. Business Activity</li>
+            <li>8. GST Certificate (Optional)</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "MSME LLP": (
       <ul>
         <li>
-          ✔ NEW MSME :- 1.Aadhar Card 2. Pan Card 3. Cancel Check 4. Business
-          Name 5. Elecricticty Bill (Business Place) 6. Business Activity 7. GST
-          Certificate (Optional)
+          ✔ NEW MSME:
+          <ul className="list-unstyled">
+            <li>1. Aadhar Card</li>
+            <li>2. PAN Card</li>
+            <li>3. Cancelled Cheque</li>
+            <li>4. Business Name</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. GST Certificate (Optional)</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE MSME :- 1. Msme Regisration Number 2. Aadhar Card 3. Pan Card
-          4. Cancel Check 5. Business Name 6 . Elecricticty Bill (Business
-          Place) 7. Business Activity 8. GST Certificate (Optional)
+          ✔ UPDATE MSME:
+          <ul className="list-unstyled">
+            <li>1. MSME Registration Number</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+            <li>4. Cancelled Cheque</li>
+            <li>5. Business Name</li>
+            <li>6. Electricity Bill (Business Place)</li>
+            <li>7. Business Activity</li>
+            <li>8. GST Certificate (Optional)</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Iec Proprietorship": (
       <ul>
         <li>
-          ✔ NEW ICE CODE :- 1. GST Certificate 2. Aadhar Card 3. Pan Card 4.
-          Cancel Check 5. Elecricticty Bill (Business Place) 6. Business
-          Activity 7. Moblie Number 8. Email Id
+          ✔ NEW IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. GST Certificate</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+            <li>4. Cancel Check</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. Mobile Number</li>
+            <li>8. Email ID</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE ICE CODE :- 1. Id Password 2. Old ICE Code 3. GST Certificate
-          4. Aadhar Card 5. Pan Card 6. Cancel Check 7. Elecricticty Bill
-          (Business Place) 8. Business Activity 9. Moblie Number 10. Mail Id
+          ✔ UPDATE IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. ID Password</li>
+            <li>2. Old IEC Code</li>
+            <li>3. GST Certificate</li>
+            <li>4. Aadhar Card</li>
+            <li>5. PAN Card</li>
+            <li>6. Cancel Check</li>
+            <li>7. Electricity Bill (Business Place)</li>
+            <li>8. Business Activity</li>
+            <li>9. Mobile Number</li>
+            <li>10. Email ID</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Iec Partnership": (
       <ul>
         <li>
-          ✔ NEW ICE CODE :- 1. Partnership Deed 2. All Partner Aadhar Card 3.
-          All Partner Pan Card 4. GST Certificate 5. Elecricticty Bill (Business
-          Place) 6. Business Activity 7. Moblie Number 8. Email Id
+          ✔ NEW IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. Partnership Deed</li>
+            <li>2. All Partner Aadhar Card</li>
+            <li>3. All Partner PAN Card</li>
+            <li>4. GST Certificate</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. Mobile Number</li>
+            <li>8. Email ID</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE ICE CODE :- 1. Id Password 2. Old ICE Code 3. Partnership
-          Deed 4. All Partner Aadhar Card 5. All Partner Pan Card 6. GST
-          Certificate 7. Elecricticty Bill (Business Place) 8. Business Activity
-          9. Moblie Number 10. Email Id
+          ✔ UPDATE IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. ID Password</li>
+            <li>2. Old IEC Code</li>
+            <li>3. Partnership Deed</li>
+            <li>4. All Partner Aadhar Card</li>
+            <li>5. All Partner PAN Card</li>
+            <li>6. GST Certificate</li>
+            <li>7. Electricity Bill (Business Place)</li>
+            <li>8. Business Activity</li>
+            <li>9. Mobile Number</li>
+            <li>10. Email ID</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Iec Private Limited Company": (
       <ul>
         <li>
-          ✔ NEW ICE CODE :- 1. All Director Aadhar Card 2. All Director Aadhar
-          Card 3. Incorporation Certificate 4. GST Certificate 5. Elecricticty
-          Bill (Business Place) 6. Business Activity 7. Moblie Number 8. Email
-          Id
+          ✔ NEW IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. All Director Aadhar Card</li>
+            <li>2. All Director PAN Card</li>
+            <li>3. Incorporation Certificate</li>
+            <li>4. GST Certificate</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. Mobile Number</li>
+            <li>8. Email ID</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE ICE CODE :- 1. Id Password 2. Old ICE Code 3. All Director
-          Aadhar Card 4. All Director Aadhar Card 5. Incorporation Certificate
-          6. GST Certificate 7. Elecricticty Bill (Business Place) 8. Business
-          Activity 9. Moblie Number 10. Email Id
+          ✔ UPDATE IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. ID Password</li>
+            <li>2. Old IEC Code</li>
+            <li>3. All Director Aadhar Card</li>
+            <li>4. All Director PAN Card</li>
+            <li>5. Incorporation Certificate</li>
+            <li>6. GST Certificate</li>
+            <li>7. Electricity Bill (Business Place)</li>
+            <li>8. Business Activity</li>
+            <li>9. Mobile Number</li>
+            <li>10. Email ID</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Iec LLP": (
       <ul>
         <li>
-          ✔ NEW ICE CODE :- 1. Partnership Deed 2. All Partner Aadhar Card 3.
-          All Partner Pan Card 4. GST Certificate 5. Elecricticty Bill (Business
-          Place) 6. Business Activity 7. Moblie Number 8. Email Id
+          ✔ NEW IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. Partnership Deed</li>
+            <li>2. All Partner Aadhar Card</li>
+            <li>3. All Partner PAN Card</li>
+            <li>4. GST Certificate</li>
+            <li>5. Electricity Bill (Business Place)</li>
+            <li>6. Business Activity</li>
+            <li>7. Mobile Number</li>
+            <li>8. Email ID</li>
+          </ul>
         </li>
         <li>
-          ✔ UPDATE ICE CODE :- 1. Id Password 2. Old ICE Code 3. Partnership
-          Deed 4. All Partner Aadhar Card 5. All Partner Pan Card 6. GST
-          Certificate 7. Elecricticty Bill (Business Place) 8. Business Activity
-          9. Moblie Number 10. Email Id
+          ✔ UPDATE IEC CODE:
+          <ul className="list-unstyled">
+            <li>1. ID Password</li>
+            <li>2. Old IEC Code</li>
+            <li>3. Partnership Deed</li>
+            <li>4. All Partner Aadhar Card</li>
+            <li>5. All Partner PAN Card</li>
+            <li>6. GST Certificate</li>
+            <li>7. Electricity Bill (Business Place)</li>
+            <li>8. Business Activity</li>
+            <li>9. Mobile Number</li>
+            <li>10. Email ID</li>
+          </ul>
         </li>
       </ul>
     ),
-    Trademark: (
+
+    "Trademark": (
       <ul>
         <li>✔ Copy of Logo (Optional)</li>
         <li>✔ Udyog Aadhar Registration Certificate</li>
         <li>✔ Incorporation Certificate or Partnership Deed</li>
-        <li>
-          ✔ Identity Proof of Signatory (All Partner/Person Self Certified)
-        </li>
-        <li>
-          ✔ Address Proof of Signatory (All Partner/Person Self Certified)
-        </li>
+        <li>✔ Identity Proof of Signatory (All Partner/Person Self Certified)</li>
+        <li>✔ Address Proof of Signatory (All Partner/Person Self Certified)</li>
         <li>✔ Applicant Partner/Person Name</li>
         <li>✔ Digital Signature</li>
       </ul>
     ),
+
     "Gst Proprietorship": (
       <ul>
         <li>
-          ✔ ID PROOF: 1. Passport Size Photo, 2. Aadhar Card , 3. Pan Card
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo</li>
+            <li>2. Aadhar Card</li>
+            <li>3. PAN Card</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ): 1. Electricity Bill, 2. Legal
-          Ownership Document, 3. Property Tax Receipt , 4. Municipal Khata Copy
-          , 5. Rent/lease Agreement / Consent Letter
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement / Consent Letter</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Gst Partnership": (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Promoter/ Partner, 2. Aadhar Card
-          Promoter/ Partner, 3. Pan Card Promoter/ Partner, 4. Partnership Firm
-          Pan Card.
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo (Promoter/Partner)</li>
+            <li>2. Aadhar Card (Promoter/Partner)</li>
+            <li>3. PAN Card (Promoter/Partner)</li>
+            <li>4. Partnership Firm PAN Card</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Partnership Deed, 2. Letter
-          Of Authorisation.
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Partnership Deed</li>
+            <li>2. Letter of Authorization</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill, 2. Legal
-          Ownership Document, 3. Property Tax Receipt , 4. Municipal Khata Copy
-          , 5. Rent/lease Agreement
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Gst Pvt Ltd Company": (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Of Directors, 2. Aadhar Card Of
-          Directors, 3. Pan Card Of Directors, 4. Pan Card Of Company.
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo of Directors</li>
+            <li>2. Aadhar Card of Directors</li>
+            <li>3. PAN Card of Directors</li>
+            <li>4. PAN Card of Company</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Certificate Of Incorporation
-          2. Letter Of Authorisation
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Certificate of Incorporation</li>
+            <li>2. Letter of Authorization</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill 2. Legal
-          Ownership Document 3. Property Tax Receipt 4. Municipal Khata Copy 5 .
-          Rent/lease Agreement/ Noc
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement / NOC</li>
+          </ul>
         </li>
       </ul>
     ),
+
     "Gst LLP": (
       <ul>
         <li>
-          ✔ ID PROOF : 1. Passport Size Photo Promoter/ Partner 2. Aadhar Card
-          Promoter/ Partner 3. Pan Card Promoter/ Partner 4. Pan Card Of Firm
+          ✔ ID PROOF:
+          <ul className="list-unstyled">
+            <li>1. Passport Size Photo (Promoter/Partner)</li>
+            <li>2. Aadhar Card (Promoter/Partner)</li>
+            <li>3. PAN Card (Promoter/Partner)</li>
+            <li>4. PAN Card of Firm</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF CONSTITUTION OF BUSSINESS : 1. Certificate Of Incorporation
-          2. Letter Of Authorisation
+          ✔ PROOF OF CONSTITUTION OF BUSINESS:
+          <ul className="list-unstyled">
+            <li>1. Certificate of Incorporation</li>
+            <li>2. Letter of Authorization</li>
+          </ul>
         </li>
         <li>
-          ✔ PROOF OF BUSSINESS PLACE ( ANY ONE ) : 1. Electricity Bill 2. Legal
-          Ownership Document 3. Property Tax Receipt 4. Municipal Khata Copy 5 .
-          Rent/lease Agreement/ Noc
+          ✔ PROOF OF BUSINESS PLACE (ANY ONE):
+          <ul className="list-unstyled">
+            <li>1. Electricity Bill</li>
+            <li>2. Legal Ownership Document</li>
+            <li>3. Property Tax Receipt</li>
+            <li>4. Municipal Khata Copy</li>
+            <li>5. Rent/Lease Agreement / NOC</li>
+          </ul>
         </li>
       </ul>
     ),
+
   };
 
   const planPricing = {
@@ -566,15 +919,15 @@ const BusinessDetail = () => {
     Trademark: "₹ 10000 /- Only.",
 
     // GST Price
-    "Gst Proprietorship": "₹ 3500 /- Only.",
-    "Gst Partnership": "₹ 3500 /- Only.",
-    "Gst Pvt Ltd Company": "₹ 3500 /- Only.",
-    "Gst LLP": "₹ 3500 /- Only.",
+    // "Gst Proprietorship": "₹ 3500 /- Only.",
+    // "Gst Partnership": "₹ 3500 /- Only.",
+    // "Gst Pvt Ltd Company": "₹ 3500 /- Only.",
+    // "Gst LLP": "₹ 3500 /- Only.",
   };
 
   return (
     <>
-      <div className="container py-5" style={{marginTop:"7rem"}}>
+      <div className="container py-5" style={{ marginTop: "7rem" }}>
         <div
           className="section-title text-center position-relative pb-3 mb-5 mx-auto"
           style={{ maxWidth: 600 }}
@@ -615,8 +968,8 @@ const BusinessDetail = () => {
                 </button>
                 <button
                   className={`plan-btn ${selectedPlan === "Sec 8 Company Or Ngo Company"
-                      ? "active"
-                      : ""
+                    ? "active"
+                    : ""
                     }`}
                   onClick={() =>
                     handlePlanChange("Sec 8 Company Or Ngo Company")
@@ -771,7 +1124,7 @@ const BusinessDetail = () => {
             )}
 
             {/* GST Registration */}
-            {id === "6" && (
+            {/* {id === "6" && (
               <>
                 <button
                   className={`plan-btn ${selectedPlan === "Gst Proprietorship" ? "active" : ""
@@ -802,7 +1155,7 @@ const BusinessDetail = () => {
                   LLP
                 </button>
               </>
-            )}
+            )} */}
           </div>
 
           {/* Render Documents List */}

@@ -26,6 +26,9 @@
 }
 
 @media (min-width: 992px) {
+  .pr{
+    padding-right: 4vw;
+  }
   .h-logo {
     width: 15%;
   }

@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../business/BusinessDetail.css"; // Assuming you have a CSS file for styling
 import PdfContext from "../../ContextApi/PdfContext";
 
 const GstDetail = () => {
   const { id } = useParams(); // Get the `id` from the URL
 
-  const{setTriggerDownload, setSelectedDocuments} =useContext(PdfContext);
+  const { setTriggerDownload, setSelectedDocuments } = useContext(PdfContext);
 
-  const handleDownloadClick = ()=>{
+  const handleDownloadClick = () => {
     setSelectedDocuments(planDocuments[selectedPlan])
     setTriggerDownload(true)
   }
@@ -20,7 +20,7 @@ const GstDetail = () => {
     3: "Salary Return",
     4: "NRI Return",
     5: "Income Tax Notice",
-    6: "GST Notices",
+    6: "Income Tax Appeal",
   };
   const [selectedPlan, setSelectedPlan] = useState(defaultPlan[id]); // State to manage the selected plan
   const services = [
@@ -48,40 +48,40 @@ const GstDetail = () => {
   const planDocuments = {
     "TDS Return": (
       <ul>
-        <li>PAN of the deductor and the deductee</li>
+        <li>✔ PAN of the deductor and the deductee</li>
         <li>Amount of tax that is paid to the government</li>
-        <li>TDS challan information</li>
+        <li>✔ TDS challan information</li>
         <li>
-          In response to a notice received from Income Tax department-You need
+          ✔ In response to a notice received from Income Tax department-You need
           the details of the Original return or details of notice
         </li>
-        <li>All Bank account information</li>
-        <li>NOT : Documents are required depending on the business</li>
+        <li>✔ All Bank account information</li>
+        <li>✔ NOT : Documents are required depending on the business</li>
       </ul>
     ),
     "Business Return": (
       <ul>
-        <li>PAN Copy</li>
-        <li>Aadhaar Copy</li>
-        <li>Bank Statements</li>
-        <li>Details of Investments (Optional)</li>
-        <li>Details of Insurance & Loans (Optional)</li>
-        <li>NOT : Documents are required depending on the business</li>
+        <li>✔ PAN Copy</li>
+        <li>✔ Aadhaar Copy</li>
+        <li>✔ Bank Statements</li>
+        <li>✔ Details of Investments (Optional)</li>
+        <li>✔ Details of Insurance & Loans (Optional)</li>
+        <li>✔ NOT : Documents are required depending on the business</li>
       </ul>
     ),
     "Salary Return": (
       <ul>
-        <li>Form 16 (Taxpayers having salary income) (Optional)</li>
-        <li>PAN Copy</li>
-        <li>Aadhaar Copy</li>
-        <li>Bank Statements</li>
-        <li>Details of Investments (Optional)</li>
-        <li>Details of Insurance & Loans (Optional)</li>
+        <li>✔ Form 16 (Taxpayers having salary income) (Optional)</li>
+        <li>✔ PAN Copy</li>
+        <li>✔ Aadhaar Copy</li>
+        <li>✔ Bank Statements</li>
+        <li>✔ Details of Investments (Optional)</li>
+        <li>✔ Details of Insurance & Loans (Optional)</li>
       </ul>
     ),
     "NRI Return": (
       <ul>
-        <li>
+        <li>✔
           The documents to be submitted include the passport to show the number
           of days spent outside India to qualify as an NRI. Besides this, the
           NRIs need to provide the statements for the demat accounts, for the
@@ -92,9 +92,15 @@ const GstDetail = () => {
     ),
     "Income Tax Notice": (
       <ul>
-        <li>Documents are required depending on the Notice</li>
+        <li>✔ Documents are required depending on the Notice</li>
       </ul>
     ),
+
+    "Income Tax Appeal": (
+      <ul>
+        <li>✔ Our team will respond to you for further details</li>
+      </ul>
+    )
   };
 
   const planPricing = {
@@ -112,7 +118,7 @@ const GstDetail = () => {
   };
 
   return (
-    <div className="container py-5" style={{marginTop:"7rem"}}>
+    <div className="container py-5" style={{ marginTop: "7rem" }}>
       <div
         className="section-title text-center position-relative pb-3 mb-5 mx-auto"
         style={{ maxWidth: 600 }}
@@ -180,6 +186,18 @@ const GstDetail = () => {
               </button>
             </>
           )}
+
+          {id === "6" && (
+            <>
+              <button
+                className={`plan-btn ${selectedPlan === "Income Tax Appeal" ? "active" : ""
+                  }`}
+                onClick={() => handlePlanChange("Income Tax Appeal")}
+              >
+                Income Tax Appeal
+              </button>
+            </>
+          )}
         </div>
 
         {/* Render Documents List */}
@@ -188,10 +206,20 @@ const GstDetail = () => {
         {/* Render Price */}
         <div className="price-section">
           <p className="price">{planPricing[selectedPlan]}</p>
-          <p className="details-text">
-            Our team will respond to you for further details
-          </p>
-          <button className="download-btn" onClick={handleDownloadClick}>Download</button>
+          {
+            id !== "6" && (
+              <p className="details-text">
+                Our team will respond to you for further details
+              </p>
+            )
+          }
+
+          {
+            id === "6" ? (
+              <Link to="/contactUs"><button className="download-btn" >Contact US</button></Link>
+            ) :
+              (<button className="download-btn" onClick={handleDownloadClick}>Download</button>)
+          }
         </div>
       </div>
     </div>

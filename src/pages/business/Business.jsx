@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
+
 const Business = () => {
-    useEffect(() => {
-      document.title = "Business Registration - Lnassociate"; // Dynamic Title
-    }, []);
+  useEffect(() => {
+    document.title = "Business Registration - Lnassociate"; // Dynamic Title
+  }, []);
 
   const services = [
-    { id: 1, title: "Company / LLP / Firm Registration", icon: "fa-search" },
-    { id: 2, title: "FSSAI", icon: "fa-search" },
-    { id: 3, title: "MSME Udyam Registration", icon: "fa-search" },
-    { id: 4, title: "IEC Code", icon: "fa-search" },
-    { id: 5, title: "Trade Mark", icon: "fa-search" },
-    { id: 6, title: "GST", icon: "fa-search" },
+    { id: 1, title: "Company / LLP / Firm Registration", logo: "/Assets/Business/Company_Registration.png" },
+    { id: 2, title: "FSSAI", logo: "/Assets/Business/FSSAI.png" },
+    { id: 3, title: "MSME Udyam Registration", logo: "/Assets/Business/MSME.png" },
+    { id: 4, title: "IEC Code", logo: "/Assets/Business/IEC_Code.png" },
+    { id: 5, title: "Trade Mark", logo: "/Assets/Business/Trademark.png" },
+    // { id: 6, title: "GST", icon: "fa-search" },
   ];
+  
+  const [hoverIndex, setHoverIndex] = useState(null);
 
   return (
     <div>
@@ -34,26 +37,35 @@ const Business = () => {
                 key={service.id}
                 className="col-lg-4 col-md-6 wow zoomIn"
                 data-wow-delay={`${0.3 + index * 0.3}s`}
+                onMouseEnter={() => setHoverIndex(index)}
+                onMouseLeave={() => setHoverIndex(null)}
               >
                 <Link
                   to={`/business/${service.id}`}
                   style={{
-                    borderRadius: "20px",
+                    borderRadius: "1.5rem",
                     backgroundColor: "#fff",
-                    backgroundImage: "url(/img/bg.jpg)",
                     backgroundSize: "contain",
                     border: "1px solid lightgrey",
-                    transition: "all 0.5s ease-in-out",
+                    transition: "all 200ms ease-in-out",
                     height: "300px",
+                    backgroundImage: `url(/Card-bg.jpg)`,
+                    transform: hoverIndex === index ? "scale(1.06)" : "scale(1)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between"
                   }}
-                  className="service-item rounded d-flex flex-column align-items-center justify-content-center text-center"
+                  className="service-item d-flex flex-column align-items-center justify-content-center text-center"
                 >
-                  <div className="service-icon">
-                    <i className={`fa ${service.icon} text-white`} />
+                  <div style={{ maxHeight: "4rem", marginBottom: ".5rem" }}>
+                    <img src={service.logo}
+                      style={{ height: "100%" }}
+                    />
                   </div>
-                  <h4 className="mb-3">{service.title}</h4>
-                  <div className="btn btn-lg btn-primary rounded">
-                  <i class="fa-solid fa-arrow-right-long"/>
+                  <h4 className="mb-3" style={{ flexGrow: .1 }}>{service.title}</h4>
+                  <div className="btn d-flex align-items-center  gap-2">
+                    <i className="fa-solid fa-arrow-right-long" />
+                    <p className="m-0">Explore</p>
                   </div>
                 </Link>
               </div>

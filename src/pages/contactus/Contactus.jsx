@@ -117,8 +117,8 @@ const ContactUs = () => {
                 <div className="ps-4">
                   <h5 className="mb-2">Visit our office</h5>
                   <h4 className="text-primary mb-0 fs-6">
-                    34B, Sapnay Complex, Opp Suvidha Shopping centre, Suvidha
-                    Cross Road Paldi, Ahmedabad, Gujarat-380007
+                    B1102 Sivanta One, Opposite Nalli sarees,
+                    Pritamnagar, Near paldi Cross Roads, Ahmedabad, Gujarat - 380007
                   </h4>
                 </div>
               </div>

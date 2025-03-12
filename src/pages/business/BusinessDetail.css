@@ -35,6 +35,8 @@
     margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 10px;
+    border:1px solid rgba(128,128,128,.5);
+    border-radius: 1rem;
 }
 
 .price-section .price {

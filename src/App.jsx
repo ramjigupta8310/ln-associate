@@ -16,6 +16,7 @@ import Finance from './pages/finance/Finance';
 import Audit from './pages/audit/Audit';
 import ContactUs from './pages/contactus/Contactus'
 import ScrollToTop from './Components/ScrollToTop';
+import WhatsAppButton from './Components/WhatsAppButton';
 
 
 // Import Bootstrap Js
@@ -58,6 +59,7 @@ const App = () => {
 
           {/* Common Footer */}
           <Footer />
+          <WhatsAppButton/>
         </div>
       </BrowserRouter>
     </>

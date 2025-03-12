@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const IncomeTax = () => {
@@ -6,13 +6,15 @@ const IncomeTax = () => {
     document.title = "Income Tax - Lnassociate"; // Dynamic Title
   }, []);
   const services = [
-    { id: 1, title: "TDS Return", icon: "fa-search" },
-    { id: 2, title: "Business Return", icon: "fa-search" },
-    { id: 3, title: "Salary Return", icon: "fa-search" },
-    { id: 4, title: "NRI Returns", icon: "fa-search" },
-    { id: 5, title: "Income Tax Notices", icon: "fa-search" },
-    { id: 6, title: "Income Tax Appeal", icon: "fa-search" },
+    { id: 1, title: "TDS Return", logo: "/Assets/IncomeTax/TDS-Return.png" },
+    { id: 2, title: "Business Return", logo: "/Assets/IncomeTax/Business-Return.png" },
+    { id: 3, title: "Salary Return", logo: "/Assets/IncomeTax/Salary-Return.png" },
+    { id: 4, title: "NRI Returns", logo: "/Assets/IncomeTax/NRI-Return.png" },
+    { id: 5, title: "Income Tax Notices", logo: "/Assets/IncomeTax/Income-Tax-Notices.png" },
+    { id: 6, title: "Income Tax Appeal", logo: "/Assets/IncomeTax" },
   ];
+
+  const [hoverIndex, setHoverIndex] = useState(null);
 
   return (
     <div>
@@ -32,27 +34,34 @@ const IncomeTax = () => {
                 key={index}
                 className="col-lg-4 col-md-6 wow zoomIn"
                 data-wow-delay={`${0.3 + index * 0.3}s`}
+                onMouseEnter={() => setHoverIndex(index)}
+                onMouseLeave={() => setHoverIndex(null)}
               >
                 <Link to={`/incometax/${service.id}`}
                   style={{
-                    borderRadius: "20px",
+                    borderRadius: "1.5rem",
                     backgroundColor: "#fff",
-                    backgroundImage: "url(/img/bg.jpg)",
                     backgroundSize: "contain",
                     border: "1px solid lightgrey",
-                    transition: "all 0.5s ease-in-out",
+                    transition: "all 200ms ease-in-out",
                     height: "300px",
+                    backgroundImage:`url(/Card-bg.jpg)`,
+                    transform: hoverIndex === index ? "scale(1.06)" : "scale(1)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between"
                   }}
-                  className="service-item rounded d-flex flex-column align-items-center justify-content-center text-center"
+                  className="service-item d-flex flex-column align-items-center justify-content-center text-center"
                 >
-                  <div className="service-icon">
-                    <i className={`fa ${service.icon} text-white`} />
+                  <div style={{ maxHeight: "4rem", marginBottom: ".5rem" }}>
+                    <img src={service.logo}
+                      style={{ height: "100%" }}
+                    />
                   </div>
-                  <h4 className="mb-3">{service.title}</h4>
-                  <div
-                    className="btn btn-lg btn-primary rounded"
-                  >
-                   <i class="fa-solid fa-arrow-right-long"/>
+                  <h4 className="mb-3" style={{ flexGrow: .1 }}>{service.title}</h4>
+                  <div className="btn d-flex align-items-center  gap-2">
+                    <i className="fa-solid fa-arrow-right-long" />
+                    <p className="m-0">Explore</p>
                   </div>
                 </Link>
               </div>

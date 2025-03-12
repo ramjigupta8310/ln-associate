@@ -3,7 +3,10 @@ import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import Team1 from "./assets/our management team1.jpg"
 import Team2 from "./assets/our management team2.jpg"
-import About from "./assets/about.jpg"
+import Banner1 from "./assets/1.png"
+import Banner2 from "./assets/2.png"
+import Banner3 from "./assets/3.png"
+import About from "./assets/about_img.png"
 import { useEffect } from "react";
 
 const Home = () => {
@@ -72,21 +75,21 @@ const Home = () => {
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="2000">
                     <img
-                      src={About}
+                      src={Banner3}
                       class="d-block w-100"
                       alt="About Ln Associate"
                     />
                   </div>
                   <div class="carousel-item" data-bs-interval="2000">
                     <img
-                      src={About}
+                      src={Banner1}
                       class="d-block w-100"
                       alt="About Ln Associate"
                     />
                   </div>
                   <div class="carousel-item" data-bs-interval="2000">
                     <img
-                      src={About}
+                      src={Banner2}
                       class="d-block w-100"
                       alt="About Ln Associate"
                     />
@@ -231,15 +234,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
               <Link to="/business"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                 <i className="fa fa-search text-white" />
@@ -255,15 +258,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
               <Link to="/accounting"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                 <i className="fa fa-search text-white" />
@@ -279,15 +282,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
               <Link to="/gst"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                 <i className="fa fa-search text-white" />
@@ -303,15 +306,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
               <Link to="/incometax"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                 <i className="fa fa-search text-white" />
@@ -327,15 +330,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
               <Link to="/finance"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                   <i className="fa fa-search text-white" />
@@ -351,15 +354,15 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
               <Link to="/audit"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                   <i className="fa fa-search text-white" />
@@ -374,7 +377,7 @@ const Home = () => {
         </div>
       </div>
       
-      {/* Our Achievement */}
+      {/* Our Experience */}
       <div className="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div className="container py-5">
           <div
@@ -386,18 +389,19 @@ const Home = () => {
             </h1>
           </div>
           <div className="row g-5">
+            {/* First Card */}
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
               <div
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                   <i className="fa fa-shield-alt text-white" />
@@ -406,18 +410,20 @@ const Home = () => {
                 <p className="m-0">Happy Clients</p>
               </div>
             </div>
+
+            {/* Second Card */}
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
               <div
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                   <i className="fa fa-shield-alt text-white" />
@@ -426,18 +432,20 @@ const Home = () => {
                 <p className="m-0">Google Review</p>
               </div>
             </div>
+
+            {/* Third Card */}
             <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
               <div
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#fff",
-                  backgroundImage: "url(/img/bg.jpg)",
                   backgroundSize: "contain",
                   border: "1px solid lightgrey",
                   transition: "all 0.5s ease-in-out",
                   height: "300px",
+                  backgroundImage:`url(/Card-bg.jpg)`,
                 }}
-                className="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center"
+                className="service-item d-flex flex-column align-items-center justify-content-center text-center"
               >
                 <div className="service-icon">
                   <i className="fa fa-shield-alt text-white" />

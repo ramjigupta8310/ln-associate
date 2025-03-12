@@ -1,11 +1,11 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../Assets/LN_ASSOCIATE_LOGO.png"
 import styles from "./Header.module.css"
 
 const Header = () => {
   return (
-    <div className="position-fixed top-0" style={{zIndex:999,width:"100vw"}}>
+    <div className="position-fixed top-0" style={{ zIndex: 999, width: "100vw" }}>
       {/* Top Header */}
       <div className="container-fluid bg-dark px-5 d-none d-lg-block">
         <div className="row gx-0">
@@ -39,7 +39,9 @@ const Header = () => {
             >
               {/* Twitter */}
               <Link
-                to="#"
+                to="https://x.com/AssociateLn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
               >
                 <i className="fab fa-twitter fw-normal" />
@@ -47,7 +49,9 @@ const Header = () => {
 
               {/* Facebook */}
               <Link
-                to="#"
+                to="https://www.facebook.com/share/1Bf4igPsxN/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
               >
                 <i className="fab fa-facebook-f fw-normal" />
@@ -55,10 +59,22 @@ const Header = () => {
 
               {/* Instagram */}
               <Link
-                to="#"
+                to="https://www.instagram.com/ln_associate?igsh=MWdqNHd1bDJoZjRnbA=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
               >
                 <i className="fab fa-instagram fw-normal" />
+              </Link>
+
+              {/* Linkedin */}
+              <Link
+                to="https://www.linkedin.com/in/ln-associate-7392a7184/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+              >
+                <i className="fab fa-linkedin fw-normal" />
               </Link>
 
             </div>
@@ -69,8 +85,8 @@ const Header = () => {
       {/* Bottom Header */}
       <div className="container-fluid position-relative p-0 bg-white">
         <nav className="navbar navbar-expand-lg navbar-dark px-2 px-md-3 py-3 py-lg-0">
-          <Link to="/"  className={`${styles["h-logo"]}`}>
-             <img src={Logo}  />
+          <Link to="/" className={`${styles["h-logo"]}`}>
+            <img src={Logo} />
           </Link>
           <button
             className="navbar-toggler"
@@ -82,7 +98,7 @@ const Header = () => {
           </button>
 
 
-          <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className={`${styles["pr"]} collapse navbar-collapse`} id="navbarCollapse">
             <div className="navbar-nav ms-auto py-0">
               {/* Home */}
               <Link

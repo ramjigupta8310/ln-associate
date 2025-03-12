@@ -53,18 +53,36 @@ const Footer = () => {
                 <div className="d-flex mt-4">
                   <a
                     className="btn btn-primary text-white btn-square me-2"
-                    href="#"
+                    href="https://x.com/AssociateLn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fab fa-twitter fw-normal" />
                   </a>
+
                   <a
                     className="btn btn-primary text-white btn-square me-2"
-                    href="#"
+                    href="https://www.facebook.com/share/1Bf4igPsxN/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fab fa-facebook-f fw-normal" />
                   </a>
-                  <a className="btn btn-primary text-white btn-square" href="#">
+
+                  <a className="btn btn-primary text-white btn-square me-2" 
+                    href="https://www.instagram.com/ln_associate?igsh=MWdqNHd1bDJoZjRnbA=="
+                    target="_blank"
+                    rel="noopener noreferrer"                  
+                  >
                     <i className="fab fa-instagram fw-normal" />
+                  </a>
+
+                  <a className="btn btn-primary text-white btn-square me-2" 
+                    href="https://www.linkedin.com/in/ln-associate-7392a7184/"
+                    target="_blank"
+                    rel="noopener noreferrer"                  
+                  >
+                    <i className="fab fa-linkedin fw-normal" />
                   </a>
                 </div>
               </div>
@@ -104,7 +122,7 @@ const Footer = () => {
         >
           <span to="#" className="d-block">
             <Link to="/" className="text-white text-decoration-underline">
-              © LN Associate India Private Limited
+              © LN Associate
             </Link>
             . All Rights Reserved.
           </span>
@@ -129,3 +147,4 @@ export default Footer;
             </a>
           </p> */
 }
+
